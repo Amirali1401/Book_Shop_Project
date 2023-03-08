@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect , get_object_or_404 , reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
+from django.contrib import messages
 
-from .models import Book , Comment
+from .models import Book , Comment , Wishlist
 from .forms import CommentForm
 from cart.forms import AddToCartFormBook
 # Create your views here.
@@ -55,3 +56,29 @@ class CreateCommentBook(LoginRequiredMixin , generic.CreateView):
         obj_form.book = book
         obj_form.save()
         return super().form_valid(form)
+
+
+
+@login_required()
+def add_to_wishlist(request,book_id):
+
+   book = get_object_or_404(Book,id=book_id)
+   wished_book,created = Wishlist.objects.get_or_create(book=book,
+   slug = book.slug,
+   user = request.user,
+   )
+
+   messages.info(request,'The item was added to your wishlist')
+   return redirect('index')
+
+
+
+
+@login_required()
+def remove_from_wishlist(request , book_id):
+    book = get_object_or_404(Book , id = book_id)
+    Wishlist.objects.filter(user = request.user , book = book , slug = book.slug).delete()
+    return redirect('index')
+
+
+

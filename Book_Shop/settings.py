@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     #third apps
     'books',
     'pages',
+    'order',
+    'payment',
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -140,7 +144,12 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-#settings authentication
+# settings authentication
 LOGIN_REDIRECT_URL = 'index'
 # LOGOUT_REDIRECT_URL = 'login'
+
+#crispy
+CRSIPY_TEMPLATE_PACK = 'bootstrap4'
+
+# email config
+EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'

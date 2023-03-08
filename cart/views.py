@@ -32,3 +32,10 @@ def remove_from_cart(request , book_id):
     book = get_object_or_404(Book  ,id = book_id)
     cart.remove(book)
     return redirect('detail_cart')
+
+
+
+def clear_cart(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect('detail_cart')

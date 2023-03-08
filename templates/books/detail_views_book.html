@@ -33,11 +33,10 @@
                                 <p class="product-short-description mb--20">
                                     {{ book.description | truncatewords:20 }}
                                 </p>
-                                <div class="my-5 py-5 product-price-wrapper mb--25">
                                     <span class="money text-success">قیمت : {{ book.price }} تومان</span>
                                     <br>
                                     <span class="comment-author">نویسنده : {{ book.author }} </span>
-                                </div>
+                                    <hr>
                                   <div class="product-action  align-items-sm-center align-content-center mb--30">
                                <div class="quantity-wrapper d-flex justify-content-start">
                                     <form action="{% url 'add_to_cart' book.id %}" method="POST">
@@ -96,19 +95,16 @@
                                                     <tbody>
                                                     <tr>
                                                         <th>تعداد صفحات</th>
-                                                        <td>۴۳۰ گرم</td>
+                                                        <td>{{ book.page_numbers }}</td>
                                                     </tr>
                                                     <tr>
                                                         <th>تاریخ چاپ</th>
-                                                        <td>XL</td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>جنس صفحات کتاب</th>
                                                         <td>
-                                                            <a href="shop-sidebar.html">مشکی</a>,
-                                                            <a href="shop-sidebar.html">سبز</a>,
-                                                            <a href="shop-sidebar.html">قرمز</a>,
-                                                            <a href="shop-sidebar.html">نارنجی</a>,
+                                                          {{ book.pages_quality }}
                                                         </td>
                                                     </tr>
                                                     </tbody>
