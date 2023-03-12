@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'pages',
     'order',
     'payment',
-    'crispy_forms',
+    'accounts',
+    # 'crispy_forms',
 
 ]
 
@@ -146,10 +147,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings authentication
 LOGIN_REDIRECT_URL = 'index'
-# LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'
 
-#crispy
-CRSIPY_TEMPLATE_PACK = 'bootstrap4'
+# #crispy
+# CRSIPY_TEMPLATE_PACK = 'bootstrap4'
 
 # email config
-EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

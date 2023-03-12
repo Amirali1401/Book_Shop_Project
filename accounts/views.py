@@ -1,10 +1,12 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render , redirect , get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm
 from django.views import generic
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from  .forms import RegisterForm , UserForm
-# from order.models import Order
+from order.models import Order
 from books.models import Wishlist
 # Create your views here.
 
@@ -24,12 +26,32 @@ def register(request):
 
 
 @login_required()
-def my_account(request):
-    wishlist_books = Wishlist.objects.all()
-    # order_books = Order.objects.all()
-    return render(request , 'accounts/my_account.html' , context={'wishlist_books':wishlist_books , 'order_books':order_books})
+def change_account_view(request , user_id):
+    user = get_object_or_404(User , id = user_id)
+    form = UserForm( request.POST , instance=user )
+    if form.is_valid():
+        form.save()
 
-#
-# def change_account_form(request ,user_id):
-#     form = UserForm(request.POST)
-#     user= User.objects.get(id = user_id)
+
+    return render(request , 'accounts/my_account.html' , context={'form':form ,'user':user })
+
+
+
+@login_required()
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'registration/password_change_form.html', {
+        'form': form
+    })
+
+

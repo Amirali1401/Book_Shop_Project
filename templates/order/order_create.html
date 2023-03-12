@@ -82,9 +82,9 @@
                                         {% for item in cart %}
                                             <tr>
                                                 <th>{{ item.book_obj.name }}
-                                                    <strong><span>&#10005;</span>۲</strong>
+                                                    <strong><span>&#10005;</span>{{ item.quantity }}</strong>
                                                 </th>
-                                                <td class="text-right">{{ item.book_obj.price }} تومان</td>
+                                                <td class="text-right">قیمت :{{ item.total_price }} تومان</td>
                                             </tr>
                                         {% endfor %}
                                         </tbody>

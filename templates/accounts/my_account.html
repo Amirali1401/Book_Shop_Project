@@ -93,7 +93,7 @@
                                                 <tbody>
                                                 {% for item in order_books %}
                                                     <tr>
-                                                        <td>{{ item.id }}</td>
+                                                        <td>{{ item.id}}</td>
                                                         <td class="wide-column">{{ item.date_created }}</td>
                                                         <td>{{ item.order_items.book.anme }}</td>
                                                         <td class="wide-column">{{  item.order_items.price}} تومان</td>
@@ -133,18 +133,19 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="accountdetails">
-                                        <form action="#" class="form form--account">
+                                        <form action="#" class="form form--account" method="POST">
+                                            {% csrf_token %}
                                             <div class="row grid-space-30 mb--20">
                                                 <div class="col-md-6 mb-sm--20">
                                                     <div class="form__group">
                                                         <label class="form__label form__label--2" for="f_name">نام <span class="required">*</span></label>
-                                                        <input type="text" name="f_name" id="f_name" class="form__input">
+                                                        <input type="text" name="first_name" id="f_name" class="form__input">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form__group">
                                                         <label class="form__label form__label--2" for="l_name">نام خانوادگی <span class="required">*</span></label>
-                                                        <input type="text" name="l_name" id="l_name" class="form__input">
+                                                        <input type="text" name="last_name" id="l_name" class="form__input">
                                                     </div>
                                                 </div>
                                             </div>
@@ -152,7 +153,7 @@
                                                 <div class="col-12">
                                                     <div class="form__group">
                                                         <label class="form__label form__label--2" for="d_name">نام نمایشی <span class="required">*</span></label>
-                                                        <input type="text" name="d_name" id="d_name" class="form__input">
+                                                        <input type="text" name="username" id="d_name" class="form__input">
                                                         <span class="suggestion"><em>این نام نمایشی فقط برای نظرات شما استفاده میشود.</em></span>
                                                     </div>
                                                 </div>
@@ -165,33 +166,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <fieldset class="form__fieldset mb--20">
-                                                <legend class="form__legend">تغییر پسورد</legend>
-                                                <div class="row mb--20">
-                                                    <div class="col-12">
-                                                        <div class="form__group">
-                                                            <label class="form__label form__label--2" for="cur_pass">پسورد فعلی (اگر نمیخواهید پسورد خود را عوض کنید این بخش را خالی بگذارید)</label>
-                                                            <input type="password" name="cur_pass" id="cur_pass" class="form__input">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb--20">
-                                                    <div class="col-12">
-                                                        <div class="form__group">
-                                                            <label class="form__label form__label--2" for="new_pass">پسورد جدید (اگر نمیخواهید پسورد خود را عوض کنید این بخش را خالی بگذارید)</label>
-                                                            <input type="password" name="new_pass" id="new_pass" class="form__input">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="form__group">
-                                                            <label class="form__label form__label--2" for="conf_new_pass">تایید پسورد جدید</label>
-                                                            <input type="password" name="conf_new_pass" id="conf_new_pass" class="form__input">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </fieldset>
+                                           <a href="{% url 'password_change' %}">تغییر پسورد</a>
+
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form__group">
