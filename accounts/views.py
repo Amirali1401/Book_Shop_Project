@@ -1,9 +1,11 @@
 from django.shortcuts import render , redirect , get_object_or_404
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import PasswordChangeForm
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.forms import SetPasswordForm , PasswordChangeForm
+from django.core.exceptions import ValidationError
+from django.http import HttpResponse
 
 from  .forms import RegisterForm , UserForm
 from order.models import Order
@@ -27,31 +29,20 @@ def register(request):
 
 
 @login_required()
-def change_account_view(request, user_id):
-    user = get_object_or_404(User, id=user_id)
-    form = UserForm(request.POST, instance=user)
-    password_form = PasswordChangeForm(request.POST)
-    if form.is_valid():
+def change_account_view(request):
+    form = UserForm(request.POST or None, instance=request.user)
+    password_form = PasswordChangeForm(request.user , request.POST or None)
+
+    if form.is_valid() and password_form.is_valid():
         form.save()
+        password_form.save()
 
-    return render(request, 'accounts/my_account.html', context={'form': form, 'user': user , 'password_form':password_form })
+    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form  })
 
 
 
-# @login_required()
-# def change_password(request):
-#     if request.method == 'POST':
-#         form = PasswordChangeForm(request.user, request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             update_session_auth_hash(request, user)  # Important!
-#             messages.success(request, 'Your password was successfully updated!')
-#             return redirect('change_password')
-#         else:
-#             messages.error(request, 'Please correct the error below.')
-#     else:
-#         form = PasswordChangeForm(request.user)
-#     return render(request, 'accounts/my_account.html', {
-#         'form': form
-#     })
-#
+def change_password(request):
+    user = User.objects.get(username = 'amirali')
+    user.set_password('a1')
+    user.save()
+    return HttpResponse('your password was changed')

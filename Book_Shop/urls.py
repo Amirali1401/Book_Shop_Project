@@ -22,10 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/' , include('books.urls')),
     path('pages/' , include('pages.urls')),
+    path('blog/' , include('blog.urls')),
     path('order/' , include('order.urls')),
     path('accounts/' , include('django.contrib.auth.urls')),
     path('accounts/' , include('accounts.urls')),
     path('cart/' , include('cart.urls')),
+    path('payment/' , include('payment.urls')),
 
    ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

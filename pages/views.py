@@ -18,3 +18,5 @@ def contactus_view(request):
 
 
 
+class AboutUs(generic.TemplateView):
+    template_name = 'pages/aboutus.html'

@@ -20,6 +20,9 @@ class Order(models.Model):
     def __str__(self):
         return f'{self.user} : {self.phone_number}  {self.date_created}'
 
+    def get_total_price(self):
+        return sum(item.quantity * item.price for item in self.order_items.all())
+
 
 
 class OrderItem(models.Model):

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.contrib.auth.decorators import login_required
 
 from .models import Order  ,OrderItem
@@ -28,6 +28,8 @@ def order_create(request):
             cart.clear()
             request.user.first_name = form_obj.first_name
             request.user.last_name = form_obj.last_name
+            request.session['order_id']  = form_obj.id
+            return redirect('payment:payment_process')
 
     return render(request , 'order/order_create.html' , context={'form':form})
 

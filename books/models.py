@@ -21,8 +21,18 @@ class Book(models.Model):
     date_modified = models.DateTimeField(auto_now=True)
 
 
+    def  tell_name(self):
+        return f'please tell {self.name}'
+
+    class Meta:
+        verbose_name = 'گتاب'
+        verbose_name_plural = 'کنابها'
+
+
     def __str__(self):
         return f'{self.user} : {self.name}'
+
+
 
 
 

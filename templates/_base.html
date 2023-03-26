@@ -73,12 +73,12 @@
                                     </a>
                                 </li>
                                 <li class="header-toolbar__item user-info">
-                                    <a href="{% url 'change_account' user.id %}" class="header-toolbar__btn">
+                                    <a href="{% url 'change_account' %}" class="header-toolbar__btn">
                                         <i class="flaticon flaticon-user"></i>
                                     </a>
                                     <ul class="user-info-menu">
                                         <li>
-                                            <a class="text-right" href="{% url 'change_account' user.id %}">حساب کاربری</a>
+                                            <a class="text-right" href="{% url 'change_account'  %}">حساب کاربری</a>
                                         </li>
                                         <li>
                                             <a class="text-right" href="{% url 'detail_cart' %}">سبد خرید</a>
@@ -112,11 +112,11 @@
        {% include 'cart/top_sidebar_cart.html' %}
             <!-- Search form Popup Start -->
         <div class="searchform__popup" id="searchForm">
-            <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+            <a href="{% url 'index' %}" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
             <div class="searchform__body">
                 <p>Start typing and press Enter to search</p>
-                <form class="searchform">
-                    <label for="popup-search"></label><input type="text" name="popup-search" id="popup-search" class="searchform__input" placeholder="Search Entire Store...">
+                <form class="searchform" action="{% url 'search_result' %}" method="get">
+                    <label for="popup-search"></label><input type="search" name="q" id="popup-search" class="searchform__input" placeholder="Search Entire Store...">
                     <button type="submit" class="searchform__submit"><i class="flaticon flaticon-magnifying-glass-icon"></i></button>
                 </form>
             </div>

@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <form action="#" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">بلاگ موردنظر خود را بنویسید</button>
+    </form>
+
+{% endblock %}

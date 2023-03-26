@@ -4,6 +4,6 @@ from . import views as accounts_views
 
 urlpatterns = [
    path('signup/' , accounts_views.register , name = 'register'),
-   path('<int:user_id>/change_account/', accounts_views.change_account_view , name ='change_account'),
-#    path('change_password/' , accounts_views.change_password , name = 'change_password'),
+   path('change_account/', accounts_views.change_account_view , name ='change_account'),
+   path('change_password/' , accounts_views.change_password ),
    ]

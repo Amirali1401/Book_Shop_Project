@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect , get_object_or_404 , reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
-from django.contrib import messages
+from django.db.models import Q
 
 from .models import Book , Comment , Wishlist
 from .forms import CommentForm
@@ -16,6 +16,17 @@ def index(request):
 
 
 
+
+class SearchResultsList(generic.ListView):
+    model = Book
+    context_object_name = "books"
+    template_name = "_base.html"
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        return Book.objects.filter(
+            Q(name__icontains=query)
+        )
 
 
 @login_required()
