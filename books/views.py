@@ -20,7 +20,7 @@ def index(request):
 class SearchResultsList(generic.ListView):
     model = Book
     context_object_name = "books"
-    template_name = "_base.html"
+    template_name = "books/index_1.html"
 
     def get_queryset(self):
         query = self.request.GET.get("q")

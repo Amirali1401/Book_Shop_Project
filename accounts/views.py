@@ -6,8 +6,11 @@ from django.contrib import messages
 from django.contrib.auth.forms import SetPasswordForm , PasswordChangeForm
 from django.core.exceptions import ValidationError
 from django.http import HttpResponse
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import user_passes_test
 
-from  .forms import RegisterForm , UserForm
+
+from  .forms import RegisterForm , UserForm , PasswordChangeForm
 from order.models import Order
 from books.models import Wishlist
 
@@ -31,18 +34,18 @@ def register(request):
 @login_required()
 def change_account_view(request):
     form = UserForm(request.POST or None, instance=request.user)
-    password_form = PasswordChangeForm(request.user , request.POST or None)
+    password_form = PasswordChangeForm(user=request.user, data=request.POST)
 
     if form.is_valid() and password_form.is_valid():
         form.save()
         password_form.save()
 
-    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form  })
+    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form })
 
 
 
 def change_password(request):
-    user = User.objects.get(username = 'amirali')
-    user.set_password('a1')
-    user.save()
-    return HttpResponse('your password was changed')
+      user = User.objects.get(username = 'amirali')
+      user.set_password('a123')
+      user.save()
+      return HttpResponse('Your password was changed')
