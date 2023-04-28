@@ -35,12 +35,13 @@ def register(request):
 def change_account_view(request):
     form = UserForm(request.POST or None, instance=request.user)
     password_form = PasswordChangeForm(user=request.user, data=request.POST)
+    wishlist_books = Wishlist.objects.all()
 
     if form.is_valid() and password_form.is_valid():
         form.save()
         password_form.save()
 
-    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form })
+    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form , 'wishlist_books' : wishlist_books  })
 
 
 

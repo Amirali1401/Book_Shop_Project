@@ -13,6 +13,9 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
     address = models.TextField()
+    zarinpal_authority = models.CharField(max_length=255 , blank=True)
+    zarinpal_ref_id  = models.CharField(max_length=150 , blank=True)
+    zarinpal_data = models.CharField(max_length = 150 )
 
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)

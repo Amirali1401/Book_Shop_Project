@@ -3,16 +3,25 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.db.models import Q
+from django.contrib import messages
+from django.core.paginator import Paginator
 
 from .models import Book , Comment , Wishlist
 from .forms import CommentForm
 from cart.forms import AddToCartFormBook
 # Create your views here.
 
-@login_required
-def index(request):
-    books = Book.objects.all()
-    return render(request, 'books/index_1.html', context={'books' : books})
+
+
+class Index(LoginRequiredMixin , generic.ListView):
+    paginate_by = 2
+
+    template_name = 'books/index_1.html'
+    context_object_name = 'books'
+    model = Book
+
+    def get_queryset(self):
+        return Book.objects.all()
 
 
 
@@ -25,7 +34,7 @@ class SearchResultsList(generic.ListView):
     def get_queryset(self):
         query = self.request.GET.get("q")
         return Book.objects.filter(
-            Q(name__icontains=query)
+            Q(name__icontains=query) | Q(description__icontains=query) | Q(author__icontains = query)
         )
 
 
@@ -90,6 +99,5 @@ def remove_from_wishlist(request , book_id):
     book = get_object_or_404(Book , id = book_id)
     Wishlist.objects.filter(user = request.user , book = book , slug = book.slug).delete()
     return redirect('index')
-
 
 
