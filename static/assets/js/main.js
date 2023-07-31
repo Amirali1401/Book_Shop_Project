@@ -605,7 +605,7 @@
 	    e.preventDefault();
 
 	    var $this = $(this);
-	    var shopProductWrap = $('.shop-books');
+	    var shopProductWrap = $('.shop-products');
 	    var viewMode = $this.data('target');
 
 	    

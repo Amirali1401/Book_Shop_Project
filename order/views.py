@@ -11,6 +11,10 @@ from .forms import OrderForm
 def order_create(request):
     form =  OrderForm(request.POST)
     cart = Cart(request)
+
+    if len(cart)==0:
+        return redirect('index')
+
     if form.is_valid():
         form_obj = form.save(commit=False)
         form_obj.user = request.user

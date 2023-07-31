@@ -8,20 +8,33 @@ from django.core.paginator import Paginator
 
 from .models import Book , Comment , Wishlist
 from .forms import CommentForm
-from cart.forms import AddToCartFormBook
+from cart.forms import AddToBooktCartForm
+from notification.models import Notification
 # Create your views here.
 
 
 
 class Index(LoginRequiredMixin , generic.ListView):
+
+    model = Book
+    template_name = 'books/index_1.html'
     paginate_by = 2
 
-    template_name = 'books/index_1.html'
-    context_object_name = 'books'
-    model = Book
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['books'] = Book.objects.all()
+        context['unread_notifications'] = Notification.objects.filter(read = False , user = self.request.user).order_by('id')
+        return context
 
-    def get_queryset(self):
-        return Book.objects.all()
+    # def get(self , request):
+    #      books = Book.objects.filter(user= self.request.user).order_by('id')
+    #      p = Paginator(books , 1)
+    #      page_number = request.GET.get('page')
+    #      page_obj = p.get_page(page_number)
+    #      unread_notification =  Notification.objects.filter(read=False).count()
+    #      return render(request , 'books/index_1.html' , context={'books':books , 'unread_notifications':unread_notification , 'page_obj':page_obj})
+
+
 
 
 
@@ -42,7 +55,7 @@ class SearchResultsList(generic.ListView):
 def detail_views_book(request , book_id):
     book = get_object_or_404(Book , id = book_id)
     form = CommentForm()
-    add_to_cart = AddToCartFormBook()
+    add_to_cart = AddToBooktCartForm()
     return render(request , 'books/detail_views_book.html' , context={'book':book , 'form':form , 'add_to_cart':add_to_cart})
 
 

@@ -42,7 +42,7 @@
                                             {% for item in cart %}
                                                 <tr>
                                                     <td class="product-remove text-left"><a
-                                                            href="{% url 'remove_from_cart' item.book_obj.id %}"><i
+                                                            href="{% url 'cart:remove_from_cart' item.book_obj.id %}"><i
                                                             class="flaticon flaticon-cross"></i></a></td>
                                                     <td class="product-thumbnail text-left">
                                                         <img src="{{ item.book_obj.covers.url }}"
@@ -59,7 +59,7 @@
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
-                                                        <form action="{% url 'add_to_cart' item.book_obj.id %}"
+                                                        <form action="{% url 'cart:add_to_cart' item.book_obj.id %}"
                                                               method="POST">
                                                             {% csrf_token %}
                                                             <div class="quantity">
@@ -73,6 +73,7 @@
                                                             {{ item.update_quantity_cart.inplace }}
                                                             <button type="submit">Update</button>
                                                         </form>
+
 
                                                     </td>
                                                     <td class="product-total-price">
@@ -89,7 +90,7 @@
                             </div>
                             <div class="row no-gutters border-top pt--20 mt--20">
                                 <div class="col-sm-6 text-sm-right">
-                                    <a href="{% url 'clear_cart' %}"><button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button></a>
+                                    <a href="{% url 'cart:clear_cart' %}"><button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button></a>
                                 </div>
                             </div>
                         </div>

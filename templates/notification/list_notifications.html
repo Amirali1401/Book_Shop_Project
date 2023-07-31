@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    {% for notification in notifications %}
+          {% if notification.read %}
+                   <a href="{{ notification.url_notification }}">{{ notification.text }}</a>
+         {% endif %}
+
+    {% endfor %}
+{% endblock %}

@@ -17,7 +17,7 @@
                                 <div class="mini-cart__product__content pt-2">
                                     <span class="mini-cart__product__title d-flex flex-row justify-content-between">
                                         <a href="#"> {{ item.book_obj.name }} </a>
-                                        <a href="{% url 'remove_from_cart' item.book_obj.id %}" class="">
+                                        <a href="{% url 'cart:remove_from_cart' item.book_obj.id %}" class="">
                                                             &#10060;
                                         </a>
                                     </span>
@@ -30,10 +30,10 @@
                         </ul>
                         <div class="mini-cart__total">
                             <span>جمع کل</span>
-                            <span class="ammount"> {{ get_total_price }}تومان</span>
+                            <span class="amount"> {{ get_total_price }}تومان</span>
                         </div>
                         <div class="mini-cart__buttons">
-                            <a href="{% url 'detail_cart' %}" class="btn btn-fullwidth btn-bg-sand mb--20">مشاهده سبد خرید</a>
+                            <a href="{% url 'cart:detail_cart' %}" class="btn btn-fullwidth btn-bg-sand mb--20">مشاهده سبد خرید</a>
                             <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">پرداخت</a>
                         </div>
                     </div>

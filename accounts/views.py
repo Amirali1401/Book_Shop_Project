@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import user_passes_test
 from  .forms import RegisterForm , UserForm , PasswordChangeForm
 from order.models import Order
 from books.models import Wishlist
+from notification.models import Notification
 
 
 # Create your views here.
@@ -36,12 +37,13 @@ def change_account_view(request):
     form = UserForm(request.POST or None, instance=request.user)
     password_form = PasswordChangeForm(user=request.user, data=request.POST)
     wishlist_books = Wishlist.objects.all()
+    notifications = Notification.objects.filter(user = request.user , read=False).order_by('id')
 
     if form.is_valid() and password_form.is_valid():
         form.save()
         password_form.save()
 
-    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form , 'wishlist_books' : wishlist_books  })
+    return render(request, 'accounts/my_account.html', context={'form': form , 'password_form':password_form , 'wishlist_books' : wishlist_books , 'notifications':notifications  })
 
 
 

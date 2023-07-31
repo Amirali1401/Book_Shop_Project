@@ -56,7 +56,7 @@
 {#                                                                <span class="money text-danger">۸۰,۰۰۰ تومان</span>#}
 {#                                                            </span>#}
                                                         </div>
-                                                        <a href="{% url 'detail_cart' %}" class="btn btn-small btn-bg-sand btn-color-dark px-3">اضافه کردن به سبد خرید</a>
+                                                        <a href="{% url 'cart:detail_cart' %}" class="btn btn-small btn-bg-sand btn-color-dark px-3">اضافه کردن به سبد خرید</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,20 +65,32 @@
                                     </div>
                                 </div>
                             </div>
-                            <nav class="pagination-wrap mt--35 mt-md--25 pb-5">
+                               <nav class="pagination-wrap mt--35 mt-md--25 pb-5">
                                 <ul class="pagination">
                                     {% if page_obj.has_next %}
-                                    <li><a href="?page={{ page_obj.next_page_number }}" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
+                                      <li><a href="?page={{ page_obj.next_page_number }}" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
                                     {% endif %}
-{#                                    <li><a href="?page=1" class = "page-number">1</a></li>#}
-{#                                    <li><a href="?page=2" class="page-number">2</a></li>#}
-{#                                    <li><a href="?page=3" class="page-number">3</a></li>#}
-                                            <li><span class="current page-number">{{ page_obj.number }}</span></li>
-                                     {% if page_obj.has_previous %}
+                                    <li><span class="current page-number">{{ page_obj.number }}</span></li>
+                                    <li><a href="#" class="page-number">2</a></li>
+                                    <li><a href="#" class="page-number">3</a></li>
+                                    {% if page_obj.has_previous %}
                                       <li><a href="?page={{ page_obj.previous_page_number }}" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
                                     {% endif %}
                                 </ul>
                             </nav>
+{#                            <nav aria-label="Page navigation example">#}
+{#                                <ul class="pagination">#}
+{#                                    {% if page_obj.has_previous %}#}
+{#                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>#}
+{#                                    {% endif %}#}
+{#                                    <li class="page-item"><a class="page-link" href="#">{{ page_obj.number }}</a></li>#}
+{#                                    <li class="page-item"><a class="page-link" href="#">2</a></li>#}
+{#                                    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+{#                                {% if page_obj.has_next %}#}
+{#                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>#}
+{#                                {% endif %}#}
+{#                                </ul>#}
+{#                            </nav>#}
                         </div>
                     </div>
                 </div>

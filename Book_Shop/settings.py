@@ -39,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'jalali_date',
+
     # third apps
     'books',
     'pages',
     'order',
     'accounts',
     'blog',
+    'notification',
     # 'crispy_forms',
 
 ]
@@ -155,6 +158,6 @@ LOGOUT_REDIRECT_URL = 'login'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # SECRET_KEY = env(DJANGO_SECRET_KEY)
-ZARINPAL_MARCHENT_ID = env("DJANGO_ZARINPAL_MERCHANT_ID")
+ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_MERCHANT_ID")
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
