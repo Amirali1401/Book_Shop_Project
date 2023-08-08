@@ -71,7 +71,8 @@
                                                                                                   min="1">
                                                             </div>
                                                             {{ item.update_quantity_cart.inplace }}
-                                                            <button type="submit">Update</button>
+                                                           <button type="submit" class="btn btn-small btn-bg-red btn-color-white ">به روز رسانی سبد خرید</button>
+
                                                         </form>
 
 
@@ -102,9 +103,9 @@
                                             <div class="cart-calculator__item--head">
                                                 <span>مجموع</span>
                                             </div>
-                                            {#                                            <div class="cart-calculator__item--value">#}
-                                            {#                                                <span>{{  }} تومان</span>#}
-                                            {#                                            </div>#}
+                                                                                        <div class="cart-calculator__item--value">
+                                                                                            <span>{{  cart|length}}</span>
+                                                                                        </div>
                                         </div>
                                         <div class="cart-calculator__item order-total">
                                             <div class="cart-calculator__item--head">
@@ -136,8 +137,6 @@
 
     </div>
     <!-- Main Wrapper End -->
-
-  {% include 'pages/footer_page.html' %}
 {% endblock %}
 
 </body>

@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ll9roz6%qy%l=q_o5so3^8!-02p_77yrbv+wmzy-!$le#68tkf'
+SECRET_KEY = 'django-insecure-ll9roz6%qy%l=q_o5so3^8!-02p_77yrbv+wmzy-!$le#68tkf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,6 +89,7 @@ WSGI_APPLICATION = 'Book_Shop.wsgi.application'
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
@@ -158,6 +159,6 @@ LOGOUT_REDIRECT_URL = 'login'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # SECRET_KEY = env(DJANGO_SECRET_KEY)
-ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_MERCHANT_ID")
-SECRET_KEY = env("DJANGO_SECRET_KEY")
+# ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_MERCHANT_ID")
+# SECRET_KEY = env("DJANGO_SECRET_KEY")
 

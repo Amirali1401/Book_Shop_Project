@@ -1,47 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c477fedf-1c32-4803-a7ea-ff47c9649065" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/notification/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notification/list_notifications.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Book_Shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Book_Shop.iml" afterDir="false" />
+    <list default="true" id="babb4b37-a2a9-49bf-b9ac-7d1ab4f24626" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Book_Shop_Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/covers/69249_94233_normal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/covers/8632423549720908.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/covers/دانلود-کتاب-معجزه-شکرگزاری-از-راندا-برن.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Book_Shop.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book_Shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book_Shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Book_Shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/my_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/my_account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/detail_views_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/detail_views_book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/index_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/index_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cart/detail_view_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/detail_view_cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/top_sidebar_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/top_sidebar_cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/order_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/order_create.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +44,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2TC3AcwXd7d27WevNuq531FZcR6" />
+  <component name="ProjectId" id="2TLT2yy53hUdoOrtDkfglDDe07n" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -70,21 +57,14 @@
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../onlineshop-test" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunManager">
-    <configuration name="Book_Shop" type="Python.DjangoServer" factoryName="Django server">
-      <module name="Book_Shop" />
+    <configuration name="Book_Shop_Project" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Book_Shop_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -110,23 +90,37 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c477fedf-1c32-4803-a7ea-ff47c9649065" name="Changes" comment="" />
-      <created>1690533093500</created>
+      <changelist id="babb4b37-a2a9-49bf-b9ac-7d1ab4f24626" name="Changes" comment="" />
+      <created>1690821157804</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1690533093500</updated>
-      <workItem from="1690533094733" duration="3990000" />
-      <workItem from="1690567773329" duration="3586000" />
-      <workItem from="1690651673204" duration="28000" />
-      <workItem from="1690711304873" duration="2561000" />
-      <workItem from="1690725835884" duration="187000" />
-      <workItem from="1690735481447" duration="3396000" />
-      <workItem from="1690792267855" duration="2987000" />
+      <updated>1690821157804</updated>
+      <workItem from="1690821159049" duration="94000" />
+      <workItem from="1690821265973" duration="578000" />
+      <workItem from="1690825162957" duration="304000" />
+      <workItem from="1691253080885" duration="295000" />
+      <workItem from="1691484831605" duration="894000" />
+      <workItem from="1691511489765" duration="1222000" />
+      <workItem from="1691521623430" duration="2808000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

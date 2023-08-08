@@ -18,7 +18,7 @@ class Index(LoginRequiredMixin , generic.ListView):
 
     model = Book
     template_name = 'books/index_1.html'
-    paginate_by = 2
+    paginate_by = 1
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
